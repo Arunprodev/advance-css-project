@@ -1,0 +1,89 @@
+.form {
+  &_group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+  &_input {
+    width: 90%;
+    padding: 1.5rem 2rem;
+    display: block;
+    font-size: $default-font-value;
+    border: none;
+    font-family: inherit;
+    color: $color-gray;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    transition: all 0.2s;
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid $color-primary-light;
+      box-shadow: 0 1rem 3rem rgba($color-black, 0.15);
+      &:invalid {
+        border-bottom: 2px solid $color-secondary-dark;
+      }
+    }
+  }
+  &_label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: block;
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+    transition: all 0.2s;
+  }
+
+  &_input:placeholder-shown ~ &_label {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4rem);
+  }
+
+  &_group_radio {
+    display: inline-block;
+    margin: 0 2rem;
+  }
+
+  &_input_radio {
+    display: none;
+  }
+
+  &_label_radio {
+    position: relative;
+    padding: 2rem 2.5rem;
+  }
+
+  &_radio_span {
+    display: inline-block;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: 5px solid $color-primary-light;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+
+    &::after {
+      content: '';
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 50%;
+      background-color: $color-primary-light;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+  }
+
+  &_input_radio:checked ~ &_label_radio &_radio_span::after {
+    opacity: 1;
+  }
+
+  @include mediaMode(tablan) {
+    &_group:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+}

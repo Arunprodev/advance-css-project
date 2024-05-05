@@ -1,0 +1,29 @@
+//Import from abstract folder
+@import 'abstract/varibles';
+@import 'abstract/functions';
+@import 'abstract/mixins';
+
+//Import from pages folder
+@import 'pages/home';
+
+//Import from base folder
+@import 'base/base';
+@import 'base/animations';
+@import 'base/typography';
+@import 'base/utilities';
+
+//Import from components folder
+@import 'components/footer';
+@import 'components/form';
+@import 'components/bg_video';
+@import 'components/story.scss';
+@import 'components/cards';
+@import 'components/feature';
+@import 'components/composition';
+@import 'components/components';
+
+//Import from layouts folder
+@import 'layouts/layouts';
+@import 'layouts/grid';
+@import 'layouts/navigation';
+@import 'layouts/popup';

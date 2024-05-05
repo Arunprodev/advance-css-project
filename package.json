@@ -1,0 +1,14 @@
+{
+  "name": "partices-natours-projects",
+  "version": "1.0.0",
+  "description": "Partices landing page of Natours project",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Arun",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
