@@ -1,0 +1,54 @@
+.story {
+  width: 60%;
+  background-color: rgba($color-white, 0.5);
+  margin: 8rem auto;
+  padding: 6rem;
+  padding-left: 9rem;
+  transform: skewX(-12deg);
+  &_shape {
+    width: 15rem;
+    height: 15rem;
+    float: left;
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50%);
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &_text {
+    transform: skewX(12deg);
+  }
+
+  &_img {
+    height: 100%;
+    transform: translateX(-3rem) scale(1.4);
+    transition: all 0.5s;
+    backface-visibility: hidden;
+    position: relative;
+  }
+  &_img_text {
+    font-size: $default-font-value;
+    color: $color-white;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, 30%);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover &_img {
+    transform: translateX(-3rem) scale(1);
+    filter: blur(5px);
+  }
+  &:hover &_img_text {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  @include mediaMode(tablan) {
+    width: 75%;
+  }
+}
